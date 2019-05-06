@@ -1,0 +1,39 @@
+@import "scss_src/reboot";
+
+body {
+    background-color: #4a647f;
+    padding: 3rem;
+}
+header {
+    nav {
+        display: flex;
+        background-color: white;
+        align-items: center;
+        $height: 3rem;
+        height: $height;
+        .menu {
+            display: block;
+            width: $height;
+            height: $height;
+            background-color: #56ccc8;
+            &::before {
+                content: "";
+            }
+        }
+        a {
+            color: black;
+        }
+        .links, .share {
+            margin-bottom: 0;
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        .links {
+            > * {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    }
+}
