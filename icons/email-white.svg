@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 17" width="25" height="17">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+	</style>
+	<g id="Contact details">
+		<g id="Email">
+			<path id="-e-email-white" class="shp0" d="M12.99,11.06c0.02,0 -0.45,0.05 -0.9,-0.28l-11.09,-7.04v10.79c0,0.83 0.67,1.5 1.5,1.5h21c0.83,0 1.5,-0.67 1.5,-1.5v-10.82l-11.1,7.09c0.35,-0.27 -0.26,0.28 -0.91,0.28zM25,1.52c0,-0.83 -0.67,-1.5 -1.5,-1.5h-21c-0.83,0 -1.5,0.67 -1.5,1.5l11.99,7.53z" />
+		</g>
+	</g>
+</svg>
