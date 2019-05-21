@@ -333,6 +333,15 @@ template {
   display: none !important;
 }
 
+a {
+  color: unset;
+}
+
+a:hover {
+  color: #56ccc8;
+  text-decoration: none;
+}
+
 body {
   background-color: #4a647f;
 }
@@ -530,13 +539,30 @@ header nav .account::before {
   margin-bottom: 0.5rem;
 }
 
+.arow > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
 .sidemenu {
-  background-color: white;
-  min-width: 25%;
+  background-color: #c5cdd1;
+  min-width: 24%;
 }
 
 .sidemenu .menu {
+  background-color: white;
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
   margin: 0;
   padding: 0;
 }
@@ -568,7 +594,6 @@ header nav .account::before {
 }
 
 .sidemenu .contacts {
-  background-color: #c5cdd1;
   color: white;
   margin: 0;
   list-style-type: none;
@@ -605,5 +630,130 @@ header nav .account::before {
   width: 3rem;
   height: 100%;
   text-align: center;
+}
+
+.submenu {
+  min-width: 25%;
+  background-color: #152840;
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.submenu a {
+  border-bottom: 1px solid #49657d;
+  display: block;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.submenu a:hover {
+  background-color: #263a54;
+}
+
+.submenu, .submenu a {
+  color: white;
+}
+
+.submenu:hover, .submenu a:hover {
+  text-decoration: none;
+}
+
+.submenu .submenu_title {
+  color: #56ccc8;
+}
+
+.submenu .submenu_title::after {
+  display: block;
+  content: url(icons/arrow.svg);
+  float: right;
+  margin-right: 1rem;
+}
+
+.submenu > li ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contact_widgets {
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact_widgets .social_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.contact_widgets .social_row .social_widgets {
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact_widgets .social_row .social_widgets > * {
+  margin-bottom: 1rem;
+}
+
+.contact_widgets .social_row .social_widgets > *:last-child {
+  margin-bottom: 0;
+}
+
+.social_menu {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  list-style-type: none;
+  background-color: white;
+  padding-left: 0;
+  padding-right: 1rem;
+  margin-bottom: 0;
+}
+
+.social_menu > li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.social_menu > li::before {
+  content: "fff";
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  width: 3rem;
+  height: 90%;
+  background-color: gray;
+  left: 0;
 }
 /*# sourceMappingURL=style.css.map */
