@@ -2,6 +2,8 @@
 
 $section_width: 80%;
 
+
+$color_1: #56ccc8;
 body {
     background-color: #4a647f;
     //padding: 3rem;
@@ -24,7 +26,7 @@ header {
             justify-content: center;
             width: $height;
             height: $height;
-            background-color: #56ccc8;
+            background-color: $color_1;
             padding: 1rem;
             .line {
                 height: 15%;
@@ -50,6 +52,10 @@ header {
             > * {
                 padding-left: 1rem;
                 padding-right: 1rem;
+                a:hover {
+                    color: $color_1;
+                    text-decoration: none;
+                }
             }
         }
         .search {
@@ -130,6 +136,15 @@ header {
     &[data-icon="phone"]::before {
         content: url('icons/phone.svg');
     }
+    &[data-icon="pointer"]::before {
+        content: url('icons/pointer.svg');
+    }
+    &[data-icon="email"]::before {
+        content: url('icons/email.svg');
+    }
+    &[data-icon="email-white"]::before {
+        content: url('icons/email-white.svg');
+    }
 }
 
 .arow {
@@ -172,21 +187,27 @@ header {
     }
     .contacts {
         background-color: #c5cdd1;
+        color: white;
         margin: 0;
         list-style-type: none;
         padding-left: 0;
+        
         > li {
             padding: 0.5rem;
+            padding-top: 1rem;
             padding-left: 3rem;
             border-bottom: 1px solid lightgray;
             position: relative;
+            display: flex;
+            align-items: center;
+            border: 0;
             &::before {
-                display: block;
                 //content: "";
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 position: absolute;
+                //top: -0.25rem;
                 left: 0rem;
                 width: 3rem;
                 height: 100%;

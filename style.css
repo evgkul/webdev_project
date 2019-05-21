@@ -403,6 +403,11 @@ header nav .links > * {
   padding-right: 1rem;
 }
 
+header nav .links > * a:hover {
+  color: #56ccc8;
+  text-decoration: none;
+}
+
 header nav .search {
   margin-right: 1rem;
 }
@@ -503,6 +508,18 @@ header nav .account::before {
   content: url("icons/phone.svg");
 }
 
+.icon[data-icon="pointer"]::before, .sidemenu .menu > li[data-icon="pointer"]::before {
+  content: url("icons/pointer.svg");
+}
+
+.icon[data-icon="email"]::before, .sidemenu .menu > li[data-icon="email"]::before {
+  content: url("icons/email.svg");
+}
+
+.icon[data-icon="email-white"]::before, .sidemenu .menu > li[data-icon="email-white"]::before {
+  content: url("icons/email-white.svg");
+}
+
 .arow {
   width: 80%;
   margin-left: auto;
@@ -552,6 +569,7 @@ header nav .account::before {
 
 .sidemenu .contacts {
   background-color: #c5cdd1;
+  color: white;
   margin: 0;
   list-style-type: none;
   padding-left: 0;
@@ -559,13 +577,20 @@ header nav .account::before {
 
 .sidemenu .contacts > li {
   padding: 0.5rem;
+  padding-top: 1rem;
   padding-left: 3rem;
   border-bottom: 1px solid lightgray;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 0;
 }
 
 .sidemenu .contacts > li::before {
-  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
