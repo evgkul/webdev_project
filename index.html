@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -97,19 +98,37 @@
         <div class="contact_widgets">
             <div class="social_row">
                 <ul class="social_menu">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Google +</a></li>
-                    <li><a href="#">Rss Feeds</a></li>
-                    <li><a href="#">Pinterest</a></li>
+                    <li><a data-icon="facebook_circle" class="icon" href="#">Facebook</a></li>
+                    <li><a data-icon="twitter_circle" class="icon" href="#">Twitter</a></li>
+                    <li><a data-icon="googleplus_circle" class="icon" href="#">Google +</a></li>
+                    <li><a data-icon="rss_circle" class="icon" href="#">Rss Feeds</a></li>
+                    <li><a data-icon="pinterest_circle" class="icon" href="#">Pinterest</a></li>
                 </ul>
                 <div class="social_widgets">
-                    <img src="facebook_widget.svg"/>
-                    <img src="twitter_widget.svg"/>
+                    <img src="facebook_widget.svg" />
+                    <img src="twitter_widget.svg" />
                 </div>
             </div>
-            <div class="sign_in_widget">Sign in</div>
-            <div class="join_newsletter_widget">Join newsletter</div>
+            <div class="sign_in_widget">
+                <span class="widget_title">Sign in</span>
+                <span class="widget_text_small">Just select your favorite social network to get started</span>
+                <div class="sign_in_icons">
+                    <a class="icon" data-icon="facebook_circle" href="#"></a>
+                    <a class="icon" data-icon="twitter_circle" href="#"></a>
+                    <a class="icon" data-icon="googleplus_circle" href="#"></a>
+                    <a class="icon" data-icon="linkedin_circle" href="#"></a>
+                </div>
+            </div>
+            <div class="join_newsletter_widget">
+                <span class="widget_title">
+                    Join newsletter
+                </span>
+                <span class="widget_text_small">Sign up for our personalized daily newsletter</span>
+                <form class="join_form">
+                    <input type="text" placeholder="Enter email address">
+                    <button>SIGN UP</button>
+                </form>
+            </div>
         </div>
     </section>
 </body>

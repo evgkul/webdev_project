@@ -17,6 +17,8 @@ a {
 
 body {
     background-color: #4a647f;
+    font-family: 'Roboto', sans-serif;
+
     //padding: 3rem;
 }
 header {
@@ -27,9 +29,10 @@ header {
     nav {
         display: flex;
         background-color: white;
+        flex-wrap: wrap;
         align-items: center;
         $height: 3rem;
-        height: $height;
+        min-height: $height;
         font-size: 75%;
         .menu {
             display: flex;
@@ -60,6 +63,7 @@ header {
             display: flex;
         }
         .links {
+            flex-wrap: wrap;
             > * {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -155,6 +159,24 @@ header {
     }
     &[data-icon="email-white"]::before {
         content: url('icons/email-white.svg');
+    }
+    &[data-icon="facebook_circle"]::before {
+        content: url('icons/facebook_circle.svg');
+    }
+    &[data-icon="twitter_circle"]::before {
+        content: url('icons/twitter_circle.svg');
+    }
+    &[data-icon="googleplus_circle"]::before {
+        content: url('icons/googleplus_circle.svg');
+    }
+    &[data-icon="rss_circle"]::before {
+        content: url('icons/rss_circle.svg');
+    }
+    &[data-icon="pinterest_circle"]::before {
+        content: url('icons/pinterest_circle.svg');
+    }
+    &[data-icon="linkedin_circle"]::before {
+        content: url('icons/linkedin_circle.svg');
     }
 }
 
@@ -304,20 +326,82 @@ header {
     > li {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        padding-left: 3rem;
+        padding-left: 1rem;
         position: relative;
-        &::before {
-            content: "fff";
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 100%;
-            text-align: center;
-            width: 3rem;
-            height: 90%;
-            background-color: gray;
-            left: 0;
+        a {
+            display: block;
+        }
+        a::before {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1rem;
+            content:"";
+        }
+        a:hover {
+            $color: #4fc6f8;
+            color: $color;
+            &::before {
+                $hue: hue($color);
+                filter: brightness(60%) url(filter.svg#blue);
+            }
+        }
+        
+    }
+}
+.sign_in_widget, .join_newsletter_widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    .widget_title {
+        font-size: 24pt;
+    }
+    .widget_text_small {
+        font-size: 12pt;
+    }
+}
+.sign_in_widget {
+    .sign_in_icons {
+        display: flex;
+        > * {
+            margin-right: 1rem;
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &[data-icon="facebook_circle"]::before {
+                filter: brightness(60%) url(filter.svg#facebook);
+            }
+            &[data-icon="twitter_circle"]::before {
+                filter: brightness(60%) url(filter.svg#twitter);
+            }
+            &[data-icon="googleplus_circle"]::before {
+                filter: brightness(55%) url(filter.svg#googleplus);
+            }
+        }
+    }
+}
+.join_newsletter_widget {
+    form {
+        display: flex;
+        justify-content: stretch;
+        width: 100%;
+        input {
+            $bgcolor: #dce1e4;
+            border: 1px solid $bgcolor;
+            padding: 0.5rem;
+            flex: 1 1;
+        }
+        button {
+            margin-left: 1rem;
+            background-color: #ea6060;
+            border: 0;
+            border-radius: 0.2rem;
+            color: white;
+            padding: 0.5rem;
+            outline: 0;
         }
     }
 }

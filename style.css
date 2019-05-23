@@ -344,6 +344,7 @@ a:hover {
 
 body {
   background-color: #4a647f;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -358,10 +359,12 @@ header nav {
   display: -ms-flexbox;
   display: flex;
   background-color: white;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 3rem;
+  min-height: 3rem;
   font-size: 75%;
 }
 
@@ -405,6 +408,11 @@ header nav .links, header nav .share {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+header nav .links {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header nav .links > * {
@@ -527,6 +535,30 @@ header nav .account::before {
 
 .icon[data-icon="email-white"]::before, .sidemenu .menu > li[data-icon="email-white"]::before {
   content: url("icons/email-white.svg");
+}
+
+.icon[data-icon="facebook_circle"]::before, .sidemenu .menu > li[data-icon="facebook_circle"]::before {
+  content: url("icons/facebook_circle.svg");
+}
+
+.icon[data-icon="twitter_circle"]::before, .sidemenu .menu > li[data-icon="twitter_circle"]::before {
+  content: url("icons/twitter_circle.svg");
+}
+
+.icon[data-icon="googleplus_circle"]::before, .sidemenu .menu > li[data-icon="googleplus_circle"]::before {
+  content: url("icons/googleplus_circle.svg");
+}
+
+.icon[data-icon="rss_circle"]::before, .sidemenu .menu > li[data-icon="rss_circle"]::before {
+  content: url("icons/rss_circle.svg");
+}
+
+.icon[data-icon="pinterest_circle"]::before, .sidemenu .menu > li[data-icon="pinterest_circle"]::before {
+  content: url("icons/pinterest_circle.svg");
+}
+
+.icon[data-icon="linkedin_circle"]::before, .sidemenu .menu > li[data-icon="linkedin_circle"]::before {
+  content: url("icons/linkedin_circle.svg");
 }
 
 .arow {
@@ -733,27 +765,108 @@ header nav .account::before {
 .social_menu > li {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 3rem;
+  padding-left: 1rem;
   position: relative;
 }
 
-.social_menu > li::before {
-  content: "fff";
-  position: absolute;
+.social_menu > li a {
+  display: block;
+}
+
+.social_menu > li a::before {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
+  content: "";
+}
+
+.social_menu > li a:hover {
+  color: #4fc6f8;
+}
+
+.social_menu > li a:hover::before {
+  -webkit-filter: brightness(60%) url(filter.svg#blue);
+          filter: brightness(60%) url(filter.svg#blue);
+}
+
+.sign_in_widget, .join_newsletter_widget {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 100%;
-  text-align: center;
-  width: 3rem;
-  height: 90%;
-  background-color: gray;
-  left: 0;
+  background-color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.sign_in_widget .widget_title, .join_newsletter_widget .widget_title {
+  font-size: 24pt;
+}
+
+.sign_in_widget .widget_text_small, .join_newsletter_widget .widget_text_small {
+  font-size: 12pt;
+}
+
+.sign_in_widget .sign_in_icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sign_in_widget .sign_in_icons > * {
+  margin-right: 1rem;
+}
+
+.sign_in_widget .sign_in_icons > *:last-child {
+  margin-right: 0;
+}
+
+.sign_in_widget .sign_in_icons > *[data-icon="facebook_circle"]::before {
+  -webkit-filter: brightness(60%) url(filter.svg#facebook);
+          filter: brightness(60%) url(filter.svg#facebook);
+}
+
+.sign_in_widget .sign_in_icons > *[data-icon="twitter_circle"]::before {
+  -webkit-filter: brightness(60%) url(filter.svg#twitter);
+          filter: brightness(60%) url(filter.svg#twitter);
+}
+
+.sign_in_widget .sign_in_icons > *[data-icon="googleplus_circle"]::before {
+  -webkit-filter: brightness(55%) url(filter.svg#googleplus);
+          filter: brightness(55%) url(filter.svg#googleplus);
+}
+
+.join_newsletter_widget form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  width: 100%;
+}
+
+.join_newsletter_widget form input {
+  border: 1px solid #dce1e4;
+  padding: 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
+
+.join_newsletter_widget form button {
+  margin-left: 1rem;
+  background-color: #ea6060;
+  border: 0;
+  border-radius: 0.2rem;
+  color: white;
+  padding: 0.5rem;
+  outline: 0;
 }
 /*# sourceMappingURL=style.css.map */
