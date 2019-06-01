@@ -1,0 +1,104 @@
+@mixin current {
+    z-index: 1;
+    justify-content: center;
+    //position: absolute;
+    //height: 20rem;
+    //top: 0;
+    & > img {
+        user-select: none;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    & > div {
+        user-select: none;
+        z-index: 1;
+        position: absolute;
+        word-break: normal;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: top;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+        flex-direction: column;
+        h2 {
+            font-weight: 300;
+        }
+        .btn {
+            padding: 0.5rem 2rem;
+            border: 1px solid white;
+        }
+    }
+    &::after {
+        content: "";
+    }
+    & + div::after {
+        content: ">";
+        position: absolute;
+        
+        right: 0%;
+    }
+}
+
+.gallery {
+    color: white;
+    background-color: #787878;
+    width: 100%;
+    height: 20rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 18rem;
+    overflow: hidden;
+    @mixin show {
+        & > * {
+            display: flex;
+        }
+        display: flex;
+        @include current;
+    }
+    > * {
+        //width: 100%;
+        z-index: 10;
+        & > * {
+            display: none;
+        }
+        &::before {
+            content: "o";
+            display: block;
+            padding-left: 0.5rem;
+            padding-top: 18rem;
+            position: relative;
+            top: -18rem;
+            width: 100%;
+            z-index: 10;
+        }
+        &:focus {
+            @include show;
+        }
+        &::after {
+            //content: "<-";
+            display: block;
+            padding: 1rem;
+            background-color: white;
+            font-weight: bold;
+            border-radius: 0.25rem;
+            color: #585858;
+            //z-index: 10;
+            position: absolute;
+            right: 100%;
+            top: 50%;
+        }
+    }
+    &:not(:focus-within) > *:first-child {
+        @include show;
+    }
+}
+

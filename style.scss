@@ -1,6 +1,7 @@
 @import "scss_src/reboot";
+@import "_gallery";
 
-$section_width: 80%;
+$section_width: 100%;
 
 
 
@@ -14,15 +15,25 @@ a {
         text-decoration: none;
     }
 }
+* {
+    word-wrap: break-word;
+    //word-break: break-all;
+}
 
 body {
     background-color: #4a647f;
     font-family: 'Roboto', sans-serif;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
     //padding: 3rem;
 }
 header {
     width: $section_width;
+    //flex: 1 1;
+    
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -186,8 +197,12 @@ header {
     margin-right: auto;
     display: flex;
     margin-bottom: 0.5rem;
+    @media (orientation: portrait) {
+        flex-direction: column;
+        align-items: stretch;
+    }
     > * {
-        flex: 1 0 auto;
+        flex: 1 1 auto;
     }
 }
 
@@ -297,6 +312,9 @@ header {
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
+    @media (orientation: portrait) {
+        margin-left: 0;
+    }
     .social_row {
         display: flex;
         flex-direction: row;
